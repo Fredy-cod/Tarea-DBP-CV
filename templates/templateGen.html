@@ -1,0 +1,73 @@
+{% extends "layoutGrid.html" %}
+
+{% block subtitle %}Llenar campos{% endblock %}
+
+{% block aside %}
+    <image>
+        <img src="../static/profile.jpg" class="profileImg" />
+    </image>
+    <form action="{{ url_for('generated') }}" method="post" style="margin:5px;">
+        <h3><u>Presentación</u></h3><br>
+        <input type="text" name="presentation" size=auto required=""  />
+    </form>
+{% endblock %}
+
+{% block content %}
+    <div id="body2">
+        <form action="{{ url_for('generated') }}" method="post" style="margin:5px;">
+        <datalist id="level">
+            <option value="Básico">
+            <option value="Intermedio"> 
+            <option value="Avanzado">
+        </datalist>
+        <p>
+            <h3><u>Idiomas dominados</u></h3>
+            {% for i in noIdioma %}
+                <p>
+                <input type="text" name="language{{ i }}" placeholder="Ejm: Español, Inglés, Portugués, etc" required="" />: Nombre del idioma
+                <input type="text" list="level"  name="levelLang{{ i }}" required="" />: Nivel de dominio
+                </p>
+            {% endfor %}
+        </p>
+        <p>
+            <h3><u>Programas dominados</u></h3>
+                {% for i in noPrograma %}
+                    <p>
+                    <input type="text" name="program{{ i }}" placeholder="Ejm: Excel, Word, Autocad, etc" required="" />: Nombre del programa
+                    <input type="text" list="level"  name="levelProg{{ i }}" required="" />: Nivel de dominio
+                    </p>
+                {% endfor %}
+        </p>
+        <p>
+            <h3><u>Experiencia laboral</u></h3>
+                {% for i in noTrabajo %}
+                    <p>
+                    <input type="text" name="language{{ i }}" placeholder="Ejm: Español, Inglés, Portugués, etc" required="" />: Nombre del idioma
+                    <input type="url"  name="levelLang{{ i }}" required="" />: Nivel de dominio
+                    </p>
+                {% endfor %}
+        </p>
+        <p>
+            <h3><u>Educación</u></h3>
+                {% for i in noEducacion %}
+                    <p>
+                    <input type="text" name="language{{ i }}" placeholder="Ejm: Español, Inglés, Portugués, etc" required="" />: Nombre del idioma
+                    <input type="url"  name="levelLang{{ i }}" required="" />: Nivel de dominio
+                    </p>
+                {% endfor %}
+        </p>
+        </form>
+    </div>
+{% endblock %}
+
+{% block secundary %}
+    <form action="{{ url_for('generated') }}" method="post" style="margin:5px;">
+        <h3><u>Contacto</u></h3><br>
+        {% for i in noContacto %}
+            <p>
+            <input type="text" name="contacto{{ i }}" placeholder="Ejm: Facebook, Whatsapp, etc." required="" />: Nombre del contacto
+            <input type="url" name="url{{ i }}" required="" />: Dirección web
+            </p>
+        {% endfor %}
+    </form>
+{% endblock %}

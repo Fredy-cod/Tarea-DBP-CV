@@ -1,0 +1,89 @@
+body {
+    background-color: #dff9fb;
+    margin: 0;
+    padding: 0;
+}
+
+.all {
+    background-color: #dffabd;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.pageTitle h1 {
+    color:darkgreen;
+    font-size: 250%;
+    background-color: #badc58;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.menu {
+    text-align: right;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li button {
+    background-color: #6ab04c;
+    border: 1px solid black;
+    padding: 3px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.menu li button:hover {
+    background-color: darkgreen;
+}
+
+.subtitle {
+    color:darkolivegreen;
+}
+
+#indexBody {
+    float: left;
+    text-align: left;
+    margin: 10px ;
+    padding: 5px ;
+    width: 50%;
+    font-size: 18px;
+}
+
+.formItem input {
+    font-size: 18px; 
+}
+
+.button, button {
+    text-align: center;
+    font-size: 18px;
+}
+
+#model {
+    float:left;
+    margin: 10px ;
+    padding: 5px ;
+    width: 45%;
+}
+
+#model img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.footer {
+    margin: 3px;
+    padding: 8px;
+    color: white;
+    background:black;
+    border: 1px dotted white;
+    clear: both;
+    text-align: center;
+}
