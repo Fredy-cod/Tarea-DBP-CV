@@ -57,6 +57,7 @@ body {
 
 .menu li button:hover {
     background-color: gray;
+    cursor: pointer;
 }
 
 .aside {
@@ -101,6 +102,20 @@ body {
 .menu {
     column-count: 1;
 }
+}
+
+.sectionForm {
+    padding: 3px;
+    border-radius: 5px;
+    background: #78e08f;
+}
+
+.textarea {
+    height: 100px;
+    max-height: 200px;
+    min-width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 #subtitle {
