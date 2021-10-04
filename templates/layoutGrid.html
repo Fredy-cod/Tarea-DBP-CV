@@ -16,9 +16,9 @@
             <nav class="menu">
                 <h2 id="subtitle">{% block subtitle %}{% endblock %}</h2>
                 <ul>
-                    <li><button>Principal</button></li>
-                    <li><button>Ayuda</button></li>
-                    <li><button>Acerca de</button></li>
+                    <li><button class="button">Principal</button></li>
+                    <li><button class="button">Ayuda</button></li>
+                    <li><button class="button">Acerca de</button></li>
                 </ul>
             </nav>
             <div class="content">
@@ -26,16 +26,17 @@
                     <aside id="aside">
                         {% block aside %}{% endblock %}
                     </aside>
-                    <section id="secundary">
-                        {% block secundary %}{% endblock %}
-                    </section>
                     <section id="primary">
                         {% block primary %}{% endblock %}
+                    </section>
+                    <section id="secundary">
+                        {% block secundary %}{% endblock %}
                     </section>
                 {% block contentEnd %}{% endblock %}
             </div>
             <footer class="footer">
-                <p>TODOS LOS DERECHOS RESERVADOS<br>2021-2022</p>
+                <p>Copyright © 2021-2022<br>TODOS LOS DERECHOS RESERVADOS</p>
+                <button class="button"><a href=mailto:fredy.quispe@ucsp.edu.pe >Contáctame</a></button>
             </footer>
         </div>
     </body>

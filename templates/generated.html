@@ -15,19 +15,19 @@
 {% block primary %}
     <div id="body3">
         <h1 style="text-align: right;">{{ nombres }}</h1>
-        <h3 style="text-align: right;">{{ puesto }} </h3>
+        <h3 style="text-align: right;">{{ puesto }} </h3><hr>
         <ul>
             <li>
                 <h3><u>Idiomas dominados</u></h3>
-                <table class="tables">
+                <table>
                     <tr>
-                        <th>Idioma</th>
-                        <th>Nivel</th>
+                        <th class="tableItem">Idioma</th>
+                        <th class="tableItem">Nivel</th>
                     </tr>
                     {% for i in listLanguage %}
                         <tr>
-                            <td>{{ i[0] }}</td>
-                            <td>{{ i[1] }}</td>
+                            <td class="tableItem">{{ i[0] }}</td>
+                            <td class="tableItem">{{ i[1] }}</td>
                         </tr>
                     {% endfor %}
                 </table>
@@ -35,15 +35,15 @@
             <hr>
             <li>
                 <h3><u>Programas dominados</u></h3>
-                <table class="tables">
+                <table>
                     <tr>
-                        <th>Programa</th>
-                        <th>Nivel</th>
+                        <th class="tableItem">Programa</th>
+                        <th class="tableItem">Nivel</th>
                     </tr>
                     {% for i in listProgram %}
                         <tr>
-                            <td>{{ i[0] }}</td>
-                            <td>{{ i[1] }}</td>
+                            <td class="tableItem">{{ i[0] }}</td>
+                            <td class="tableItem">{{ i[1] }}</td>
                         </tr>
                     {% endfor %}
                 </table>

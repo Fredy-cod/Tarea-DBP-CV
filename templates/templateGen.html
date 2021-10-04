@@ -2,31 +2,29 @@
 
 {% block subtitle %}Llenar campos{% endblock %}
 
-{% block contentStart %}<form action="{{ url_for('generated') }}" method="post" style="margin:5px;">{% endblock %}
+{% block contentStart %}<form action="{{ url_for('generated') }}" method="post" style="margin:5px;" class="content">{% endblock %}
 
 {% block aside %}
-        <image>
-            <img src="../static/profile.jpg" class="profileImg" />
-        </image>
-            <h3><u>Presentación</u></h3>
-            <textarea name="presentation" required="" placeholder="Escriba aquí su presentación" class="textarea"></textarea>
-        
-    {% endblock %} 
-    {% block secundary %}
-            <h3><u>Contacto</u></h3><br>
-            {% for i in range(noContacto) %}
-                <p class="sectionForm">
-                <input type="text" name="contact{{ i }}" placeholder="Ejm: Facebook, Whatsapp, etc." required="" />: Nombre del contacto
-                <input type="url" name="url{{ i }}" required="" />: Dirección web
-                </p>
-            {% endfor %}
-    {% endblock %}
+    <image>
+        <img src="../static/profile.jpg" class="profileImg" />
+    </image>
+        <h3><u>Presentación</u></h3>
+        <textarea name="presentation" required="" placeholder="Escriba aquí su presentación" class="textarea"></textarea>    
+{% endblock %} 
 
-
+{% block secundary %}
+        <h3><u>Contacto</u></h3><br>
+        {% for i in range(noContacto) %}
+            <p class="sectionForm">
+            <input type="text" name="contact{{ i }}" placeholder="Ejm: Facebook, Whatsapp, etc." required="" />: Nombre del contacto
+            <input type="url" name="url{{ i }}" required="" />: Dirección web
+            </p>
+        {% endfor %}
+{% endblock %}
 
 {% block primary %}<div id="body2">
         <p class="sectionForm">
-            <label name="completName">Nombre: </label>
+            <label name="completName">Nombre completo: </label>
             <input type="text" name="completName" required="" placeholder="Ingrese sus nombres y apellidos"  />
             <label name="workOcuped">Puesto ocupado/buscado: </label>
             <input type="text" name="workOcuped" required="" placeholder="Ingrese el puesto ocupado/buscado"  />
@@ -80,6 +78,7 @@
                 {% endfor %}
         </p>
         <button>ENVIAR FORMULARIO</button>
-    </div>{% endblock %}
+    </div>
+{% endblock %}
 
 {% block contentEnd %}</form>{% endblock %}
