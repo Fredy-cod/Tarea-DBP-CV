@@ -16,7 +16,7 @@
         <h3><u>Contacto</u></h3><br>
         {% for i in range(noContacto) %}
             <p class="sectionForm">
-            <input type="text" name="contact{{ i }}" placeholder="Ejm: Facebook, Whatsapp, etc." required="" />: Nombre del contacto
+            <input type="text" name="contact{{ i }}" placeholder="Ejm: Facebook, Whatsapp, etc." required="" style="max-width:100px;" />: Nombre del contacto
             <input type="url" name="url{{ i }}" required="" />: Dirección web
             </p>
         {% endfor %}
@@ -77,7 +77,7 @@
                     </p>
                 {% endfor %}
         </p>
-        <button>ENVIAR FORMULARIO</button>
+        <button class="confirmButton">ENVIAR FORMULARIO</button>
     </div>
 {% endblock %}
 
