@@ -2,6 +2,7 @@
 
 {% block subtitle %}Generar N° de campos de CV{% endblock %}
 
+
 {% block aside %}
     <div>
         <h3><b>Modelo de CV</b></h3>
@@ -13,7 +14,7 @@
 {% endblock %}
 
 
-{% block content %}
+{% block primary %}
     <div id="body1">
         <form action="{{ url_for('templateGen') }}" method="post" style="margin:5px;">
             <b>

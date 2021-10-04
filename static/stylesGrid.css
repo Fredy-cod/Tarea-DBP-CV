@@ -14,21 +14,38 @@ body {
     max-width: 1100px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, auto);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
     grid-row: auto;
     grid-gap: 10px;
-    grid-template-areas: "header header header"
-                         "menu menu menu"
-                         "aside content content"
-                         "secundary content content"
-                         "footer footer footer";
+    grid-template-areas: "header"
+                         "menu"
+                         "content"
+                         "footer";
 }
 
-.container .header, .container .aside, .container .menu, .container .secundary, .container .content, .container .footer  {
+.container .header, .container .menu, .container .content, .container .footer  {
     padding: 3px;
     margin: 2px;
     border-radius: 10px;
+}
+
+.content {
+    grid-area: content;
+    text-align: left;
+    padding: 3px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 5px;
+    grid-template-areas: "aside primary"
+                         "secundary primary";
+}
+
+.content #primary, .content #aside, .content #secundary {
+    border-radius: 10px;
+    background: #b8e994;
+    padding: 10px;
 }
 
 .header {
@@ -61,21 +78,15 @@ body {
     cursor: pointer;
 }
 
-.aside {
-    text-align: left;
-    background: #b8e994;
+#aside {
     grid-area: aside;
 }
 
-.content {
-    text-align: left;
-    background: #b8e994;
-    grid-area: content;
+#primary {
+    grid-area: primary;
 }
 
-.secundary {
-    text-align: left;
-    background: #b8e994;
+#secundary {
     grid-area: secundary;
 }
 
@@ -86,15 +97,15 @@ body {
 }
 
 @media screen and (max-width: 680px) {
-.container {
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas: "header header header"
-                         "menu menu menu"
-                         "aside aside aside"
-                         "content content content"
-                         "secundary secundary secundary"
-                         "footer footer footer";
+.content {
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr;
+    grid-template-areas: "aside"
+                         "primary"
+                         "secundary";
 }
+
+
 
 .aside {
     column-count: 2;
@@ -106,9 +117,9 @@ body {
 }
 
 .sectionForm {
-    padding: 3px;
+    padding: 5px;
     border-radius: 5px;
-    background: #78e08f;
+    background: #f6e58d;
 }
 
 .textarea {
@@ -127,7 +138,27 @@ body {
 #modelCV {
     width:100%;
     border-radius: 10px;
+    margin: 3px;
+    box-sizing: border-box;
 }
+
+#body3 ul {
+    list-style: none;
+}
+
+.tables > tr > td, th {
+    margin: 0;
+    border: 1px solid black;
+}
+
+#body3 > ul > li > div > small, h5, h4 {
+    margin: 0;
+    padding: 0;
+}
+
 .profileImg {
     width:100%;
+    border-radius: 10px;
+    margin: 3px;
+    box-sizing: border-box;
 }

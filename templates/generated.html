@@ -6,69 +6,74 @@
     <image>
         <img src="../static/profile.jpg" class="profileImg"/>
     </image>
-    <h3><u>Presentación</u></h3><br>
+    <h3><u>Presentación</u></h3>
     <p>
         {{ presentacion }}
     </p>
 {% endblock %}
 
-{% block content %}
+{% block primary %}
     <div id="body3">
-        <h1>{{ nombres }}</h1>
-        <h3>{{ puesto }} </h3>
-        <p>
-            <h3><u>Idiomas dominados</u></h3>
-            <table>
-                <tr>
-                    <th>Idioma</th>
-                    <th>Nivel</th>
-                </tr>
-                {% for i in listLanguage %}
+        <h1 style="text-align: right;">{{ nombres }}</h1>
+        <h3 style="text-align: right;">{{ puesto }} </h3>
+        <ul>
+            <li>
+                <h3><u>Idiomas dominados</u></h3>
+                <table class="tables">
                     <tr>
-                        <td>{{ i[0] }}</td>
-                        <td>{{ i[1] }}</td>
+                        <th>Idioma</th>
+                        <th>Nivel</th>
                     </tr>
-                {% endfor %}
-            </table>
-        </p>
-        <p>
-            <h3><u>Programas dominados</u></h3>
-            <table>
-                <tr>
-                    <th>Programa</th>
-                    <th>Nivel</th>
-                </tr>
-                {% for i in listProgram %}
+                    {% for i in listLanguage %}
+                        <tr>
+                            <td>{{ i[0] }}</td>
+                            <td>{{ i[1] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </li>
+            <hr>
+            <li>
+                <h3><u>Programas dominados</u></h3>
+                <table class="tables">
                     <tr>
-                        <td>{{ i[0] }}</td>
-                        <td>{{ i[1] }}</td>
+                        <th>Programa</th>
+                        <th>Nivel</th>
                     </tr>
+                    {% for i in listProgram %}
+                        <tr>
+                            <td>{{ i[0] }}</td>
+                            <td>{{ i[1] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </li>
+            <hr>
+            <li>
+                <h3><u>Puestos ocupados</u></h3>
+                {% for i in listWorks %}
+                    <div class="sectionForm">
+                        <small>{{ i[0] }}</small>
+                        <h5>{{ i[1] }} - {{ i[2] }}</h5>
+                        <h4>{{ i[3] }}</h4>
+                        <h5>{{ i[4] }}</h5>
+                        <h4>{{ i[5] }}</h4>
+                    </div>
                 {% endfor %}
-            </table>
-        </p>
-        <p>
-            <h3><u>Puestos ocupados</u></h3>
-            {% for i in listWorks %}
-                <p class="sectionForm">
-                    <p><small>{{ i[0] }}</small></p>
-                    <h5>{{ i[1] }} - {{ i[2] }}</h5>
-                    <h4>{{ i[3] }}</h4>
-                    <h5>{{ i[4] }}</h5>
-                    <h4>{{ i[5] }}</h4>
-                </p>
-            {% endfor %}
-        </p>
-        <p>
-            <h3><u>Educación</u></h3>
-            {% for i in listEducation %}
-                <p class="sectionForm">
-                    <p><small>{{ i[0] }}</small></p>
-                    <h5>{{ i[1] }} - {{ i[2] }}</h5>
-                    <h4>{{ i[3] }}</h4>
-                    <h5>{{ i[4] }}</h5>
-                </p>
-            {% endfor %}
-        </p>
+            </li>
+            <hr>
+            <li>
+                <h3><u>Educación</u></h3>
+                {% for i in listEducation %}
+                    <div class="sectionForm">
+                        <small>{{ i[0] }}</small>
+                        <h5>{{ i[1] }} - {{ i[2] }}</h5>
+                        <h4>{{ i[3] }}</h4>
+                        <h5>{{ i[4] }}</h5>
+                    </div>
+                {% endfor %}
+            </li>
+        </ul>
     </div>
 {% endblock %}
 
