@@ -17,6 +17,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, auto);
     grid-row: auto;
+    grid-gap: 10px;
     grid-template-areas: "header header header"
                          "menu menu menu"
                          "aside content content"

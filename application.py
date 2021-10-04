@@ -70,7 +70,7 @@ def generated():
     listTmp.append(request.form.get(f"instName{i}"))
     listEducation.append(listTmp)
     listTmp=[]
-  print(noContact)
+  print(presentacion)
   print(listContact)
   return render_template("generated.html", presentacion=presentacion, nombres=name, puesto=workOcuped, listContact= listContact, listEducation=listEducation, listLanguage= listLanguage, listWorks= listWorks, listProgram= listProgram)
 

@@ -21,15 +21,19 @@
                     <li><button>Acerca de</button></li>
                 </ul>
             </nav>
+            {% block form %}
+            {% endblock %}
             <aside class="aside">
                 {% block aside %}{% endblock %}
             </aside>
-            <section class="content">
-                {% block content %}{% endblock %}
-            </section>
             <div class="secundary">
                 {% block secundary %}{% endblock %}
             </div>
+            <section class="content">
+                {% block content %}{% endblock %}
+            </section>
+            {% block endform %}
+            {% endblock %}
             <footer class="footer">
                 <p>TODOS LOS DERECHOS RESERVADOS<br>2021-2022</p>
             </footer>

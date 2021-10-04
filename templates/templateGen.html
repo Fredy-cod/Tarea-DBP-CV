@@ -2,19 +2,32 @@
 
 {% block subtitle %}Llenar campos{% endblock %}
 
+{% block form %}
+<form action="{{ url_for('generated') }}" method="post" style="margin:5px;">
+{% endblock %}
+
 {% block aside %}
     <image>
         <img src="../static/profile.jpg" class="profileImg" />
     </image>
-    <form action="{{ url_for('generated') }}" method="post" style="margin:5px;">
         <h3><u>Presentación</u></h3><br>
         <textarea name="presentation" required="" placeholder="Escriba aquí su presentación" class="textarea"></textarea>
-    </form>
+    
+{% endblock %}
+
+{% block secundary %}
+        <h3><u>Contacto</u></h3><br>
+        {% for i in range(noContacto) %}
+            <p class="sectionForm">
+            <input type="text" name="contact{{ i }}" placeholder="Ejm: Facebook, Whatsapp, etc." required="" />: Nombre del contacto
+            <input type="url" name="url{{ i }}" required="" />: Dirección web
+            </p>
+        {% endfor %}
+    
 {% endblock %}
 
 {% block content %}
     <div id="body2">
-        <form action="{{ url_for('generated') }}" method="post" style="margin:5px;">
         <p class="sectionForm">
             <label name="completName">Nombre: </label>
             <input type="text" name="completName" required="" placeholder="Ingrese sus nombres y apellidos"  />
@@ -70,18 +83,9 @@
                 {% endfor %}
         </p>
         <button>ENVIAR FORMULARIO</button>
-        </form>
     </div>
 {% endblock %}
 
-{% block secundary %}
-    <form action="{{ url_for('generated') }}" method="post" style="margin:5px;">
-        <h3><u>Contacto</u></h3><br>
-        {% for i in range(noContacto) %}
-            <p class="sectionForm">
-            <input type="text" name="contact{{ i }}" placeholder="Ejm: Facebook, Whatsapp, etc." required="" />: Nombre del contacto
-            <input type="url" name="url{{ i }}" required="" />: Dirección web
-            </p>
-        {% endfor %}
+{% block endform %}
     </form>
 {% endblock %}
